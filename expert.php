@@ -64,19 +64,19 @@ new_exercise(6);
 $arr = [];
 function combineNames($str1 = "", $str2 = "") {
     $params = [$str1, $str2];
-    foreach($params as $param) {
+    foreach($params as &$param) {
         if ($param == "") {
             $param = randomHeroName();
         }
     }
     return implode(" - ", $params);
 }
-function randomGenerate($arr, $amount) {
+/*function randomGenerate($arr, $amount) {
     for ($i = $amount; $i > 0; $i--) {
         array_push($arr, randomHeroName());
     }
     return $amount;
-}
+}*/
 function randomHeroName()
 {
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
@@ -87,13 +87,20 @@ function randomHeroName()
 }
 
 echo "Here is the name: " . combineNames();
-// new_exercise(7);
-// function copyright(int $year) {
-//     return "&copy; $year BeCode";
-// }
-// //print the copyright
+
+new_exercise(7);
+
+function copyright($year) {
+return "&copy; $year BeCode";
+ }
+
+$print=copyright('2019');
+echo $print;
+
+ //print the copyright
 // copyright(date('Y'));
-// new_exercise(8);
+
+new_exercise(8);
 // function login(string $email, string $password) {
 //     if($email == 'john@example.be' || $password == 'pocahontas') {
 //         return 'Welcome John';
